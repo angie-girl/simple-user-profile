@@ -2,4 +2,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 /* Importing Font Awesome SCSS file. */
-@import '~@fortawesome/fontawesome-pro/scss/fontawesome';
+@import '~@fortawesome/fontawesome-pro/css/all.css';
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}

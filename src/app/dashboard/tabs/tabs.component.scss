@@ -1,0 +1,106 @@
+.list-group {
+    .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 0;
+      padding: 8px 16px;
+      gap: 89px;
+      background: transparent;
+      border-radius: 8px;
+      .fas {
+        color: #9A9A9A;
+      }
+      .circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &.active {
+        .circle {
+          background-color: #fff;
+        }
+        h6, .fas {
+          color: #fff;
+        }
+        &.dashboard {
+          background-color: #00BCD4;
+          .icons {
+            filter: brightness(0) saturate(100%) invert(61%) sepia(99%) saturate(3848%) hue-rotate(152deg) brightness(102%) contrast(105%);
+          }
+        }
+        &.user-profile {
+          background-color: #009688;
+          .icons {
+            filter: brightness(0) saturate(100%) invert(38%) sepia(17%) saturate(5275%) hue-rotate(145deg) brightness(98%) contrast(102%);
+          }
+        }
+        &.payments {
+          background-color: #8BC34A;
+          .icons {
+            filter: brightness(0) saturate(100%) invert(78%) sepia(53%) saturate(503%) hue-rotate(36deg) brightness(85%) contrast(86%);
+          }
+        }
+        &.messages {
+          background-color: #FFC107;
+          .icons {
+            filter: brightness(0) saturate(100%) invert(65%) sepia(87%) saturate(592%) hue-rotate(354deg) brightness(108%) contrast(102%);
+          }
+        }
+        &.settings {
+          background-color: #FF9800;
+          .icons {
+            filter: brightness(0) saturate(100%) invert(53%) sepia(64%) saturate(1202%) hue-rotate(2deg) brightness(105%) contrast(104%);
+          }
+        }
+        &.logout {
+          background-color: #FF5722;
+          .icons {
+            filter: brightness(0) saturate(100%) invert(38%) sepia(89%) saturate(1594%) hue-rotate(346deg) brightness(101%) contrast(103%);
+          }
+        }
+      }
+    }
+    .dashboard .circle {
+      background-color: #00BCD4;
+    }
+    .user-profile .circle {
+      background-color: #009688;
+    }
+    .payments .circle {
+      background-color: #8BC34A;
+    }
+    .messages .circle {
+      background-color: #FFC107;
+    }
+    .settings .circle {
+      background-color: #FF9800;
+    }
+    .logout .circle {
+      background-color: #FF5722;
+    }
+  }
+
+.list-group-mobile-item {
+  padding: 12px 24px;
+  gap: 16px;
+  min-width: 166px;
+  background: #00BCD4;
+  border-radius: 24px;  
+  text-decoration: none;
+  &.user-profile, &.settings {
+    background: #333333;
+  }
+  &.payments {
+    background: #8BC34A;
+  }
+  &.messages {
+    background: #FFC107;
+  }
+  &.logout {
+    background: #FF5722;
+  }
+}

@@ -6,6 +6,7 @@ import { EnvironmentModel } from '../app/core/models/enviroment/environment.mode
 
 export const environment: EnvironmentModel = {
   production: false,
+  api_url: 'https://randomuser.me/api/',
 };
 
 /*

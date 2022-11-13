@@ -1,22 +1,35 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-import { map } from 'rxjs/operators';
-import { UserDto } from '../interfaces/user.interface';
-import { IRequest } from '../interfaces/request';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, Observable, of } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../environments/environment";
+import { map, switchMap } from "rxjs/operators";
+import { User } from "../interfaces/user.interface";
+import { IRequest } from "../interfaces/request";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class UsersService {
-  constructor(private http: HttpClient) {}
+  currentUser: Observable<User | null>;
+  private currentUserSubject: BehaviorSubject<User | null>;
 
-  getUser(): Observable<UserDto> {
-    return this.http.get<IRequest>(environment.api_url).pipe(map((res) => res.results));
+  constructor(private http: HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<User | null>(null);
+    this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  // public show(userId: number): Observable<IUser> {
-  //   return this.http.get<IRequest>(`${environment.api_url}/user/${userId}`).pipe(map((res) => res.data));
-  // }
+  initCurrentUser(): Observable<void> {
+    return this.getUser().pipe(
+      switchMap((res: User) => {
+        this.currentUserSubject.next(res);
+        return of(void 0);
+      })
+    );
+  }
+
+  private getUser(): Observable<User> {
+    return this.http
+      .get<IRequest>(environment.api_url)
+      .pipe(map((res) => res.results[0]));
+  }
 }

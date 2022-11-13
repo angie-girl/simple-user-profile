@@ -7,6 +7,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 const routes: Routes = [
   { path: '', component: DashboardComponent, 
   children: [
+    { path: '', redirectTo: 'user-profile', pathMatch: 'full'},
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'dashboard', component: PlaceholderComponent },
     { path: 'payments', component: PlaceholderComponent },

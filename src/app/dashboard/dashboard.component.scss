@@ -1,18 +1,23 @@
 .wrapper {
-    min-height: 100vh;
-    background: radial-gradient(100% 256% at 100% 100%, #F5F5F5 0%, #FFFFFF 75.05%);
-    .img-wrapper {
-        width: 144px;
-        height: 144px;
-        border: 1px solid #E3E3E3;
-        border-radius: 75px;
+  min-height: 100vh;
+  background: radial-gradient(100% 256% at 100% 100%, #F5F5F5 0%, #FFFFFF 75.05%);
+  .container {
+    max-width: 991px;
+  }
+  .img-wrapper {
+    width: 144px;
+    height: 144px;
+    border: 1px solid #E3E3E3;
+    border-radius: 75px;
     }
-    .card {
-        background: #FFFFFF;
-        box-shadow: 25px 25px 50px rgba(153, 153, 153, 0.06), -10px -10px 25px rgba(153, 153, 153, 0.04);
-        border-radius: 48px;
-        @media screen and (min-height: 991px){
-            min-height: 80vh;
-        }
+  .card {
+    background: #FFFFFF;
+    box-shadow: 25px 25px 50px rgba(153, 153, 153, 0.06), -10px -10px 25px rgba(153, 153, 153, 0.04);
+    border-radius: 24px;
+    min-height: 45vh;
+    @media screen and (min-width: 991px){
+      min-height: 80vh;
+      border-radius: 48px;
     }
+  }
 }

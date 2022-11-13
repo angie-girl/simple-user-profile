@@ -1,110 +1,114 @@
 <div class="card-body p-4 p-md-5">
-    <div class="d-none d-md-block">
-        <section class="border-bottom">
-            <p class="fw-bold my-4">Personal info</p>
-            <div class="row row-cols-1">
-                <dl class="mb-4">
-                  <dt>Legal name</dt>
-                  <dd>kdjfdsj</dd>
-                </dl>
-                <dl class="mb-4">
-                  <dt>Gender</dt>
-                  <dd>dfdsgdf</dd>
-                </dl>
-                <dl class="mb-4">
-                    <dt>Date of birth</dt>
-                    <dd>dfdsgdf</dd>
-                </dl>
-            </div>                   
-        </section>
-        <section class="border-bottom">
-            <p class="fw-bold my-4">Contact details</p>  
-            <div class="row row-cols-1">
-                <dl class="mb-4">
-                  <dt>Email address</dt>
-                  <dd>kdjfdsj</dd>
-                </dl>
-                <dl class="mb4">
-                  <dt>Phone</dt>
-                  <dd>dfdsgdf</dd>
-                </dl>
-            </div>                  
-        </section>
-        <section>
-            <p class="fw-bold my-4">My address</p> 
-            <div class="row row-cols-1">
-                <dl>
-                  <dt>Home</dt>
-                  <dd>kdjfdsj</dd>
-                </dl>
-            </div>   
-            <img class="img-fluid" src="../../../assets/icons/maps.png" alt="">                
-        </section>
-    </div>
-    <div class="accordion d-block d-md-none" id="accordionExample">
-        <div class="accordion-item border-0 border-bottom">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Personal info
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="row row-cols-1">
-                    <dl class="mb-4">
-                      <dt>Legal name</dt>
-                      <dd>kdjfdsj</dd>
-                    </dl>
-                    <dl class="mb-4">
-                      <dt>Gender</dt>
-                      <dd>dfdsgdf</dd>
-                    </dl>
-                    <dl class="mb-4">
-                        <dt>Date of birth</dt>
-                        <dd>dfdsgdf</dd>
-                    </dl>
-                </div> 
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item border-0 border-bottom">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Contact details
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="row row-cols-1">
-                    <dl class="mb-4">
-                      <dt>Email address</dt>
-                      <dd>kdjfdsj</dd>
-                    </dl>
-                    <dl class="mb4">
-                      <dt>Phone</dt>
-                      <dd>dfdsgdf</dd>
-                    </dl>
-                </div> 
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item border-0">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                My address
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="row row-cols-1">
-                    <dl>
-                      <dt>Home</dt>
-                      <dd>kdjfdsj</dd>
-                    </dl>
-                </div>   
-                <img class="img-fluid" src="../../../assets/icons/maps.png" alt=""> 
-            </div>
-          </div>
+  <!-- Mobile user profile-->
+  <div class="accordion d-block d-lg-none" id="accordionExample">
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button px-0 pt-0 pb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Personal info
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body p-0">
+          <div class="row row-cols-1">
+            <dl class="mb-4">
+              <dt>Legal name</dt>
+              <dd>{{user.name.first}} {{user.name.last}}</dd>
+            </dl>
+            <dl class="mb-4">
+              <dt>Gender</dt>
+              <dd>{{user.gender | titlecase}}</dd>
+            </dl>
+            <dl class="mb-4">
+              <dt>Date of birth</dt>
+              <dd>{{user.dob.date | date}}</dd>
+            </dl>
+          </div> 
         </div>
       </div>
+    </div>
+    <div class="accordion-item border-0 border-bottom">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed px-0 py-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Contact details
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body p-0">
+          <div class="row row-cols-1">
+            <dl class="mb-4">
+              <dt>Email address</dt>
+              <dd>{{user.email}}</dd>
+            </dl>
+            <dl class="mb-4">
+              <dt>Phone</dt>
+              <dd>{{user.phone}}</dd>
+            </dl>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed px-0 pt-4 pb-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          My address
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body p-0">
+          <div class="row row-cols-1">
+            <dl class="mb-4">
+              <dt>Home</dt>
+              <dd>{{user.location.street.number}} {{user.location.street.name}}, {{user.location.city}}, {{user.location.country}}</dd>
+            </dl>
+          </div>   
+          <img class="img-fluid" src="../../../assets/images/maps.png" alt="map"> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Mobile user profile-->
+  <!-- Desktop user profile-->
+  <div class="d-none d-lg-block">
+    <section class="border-bottom">
+      <p class="fw-bold mb-4">Personal info</p>
+      <div class="row row-cols-1">
+        <dl class="mb-4">
+          <dt>Legal name</dt>
+          <dd>{{user.name.first}} {{user.name.last}}</dd>
+        </dl>
+        <dl class="mb-4">
+          <dt>Gender</dt>
+          <dd>{{user.gender | titlecase}}</dd>
+        </dl>
+        <dl class="mb-4">
+          <dt>Date of birth</dt>
+          <dd>{{user.dob.date | date}}</dd>
+        </dl>
+      </div>                   
+    </section>
+    <section class="border-bottom">
+      <p class="fw-bold my-4">Contact details</p>  
+      <div class="row row-cols-1">
+        <dl class="mb-4">
+          <dt>Email address</dt>
+          <dd>{{user.email}}</dd>
+        </dl>
+        <dl class="mb-4">
+          <dt>Phone</dt>
+          <dd>{{user.phone}}</dd>
+        </dl>
+      </div>                  
+    </section>
+    <section>
+      <p class="fw-bold my-4">My address</p> 
+      <div class="row row-cols-1">
+        <dl class="mb-4">
+          <dt>Home</dt>
+          <dd>{{user.location.street.number}} {{user.location.street.name}}, {{user.location.city}}, {{user.location.country}}</dd>
+        </dl>
+      </div>   
+      <img class="img-fluid" src="../../../assets/images/maps.png" alt="map">                
+    </section>
+  </div>
+  <!-- End Desktop user profile-->
 </div>
